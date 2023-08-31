@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 export default function Friend({ friendobj }) {
   return (
     <li>
@@ -18,7 +20,7 @@ export default function Friend({ friendobj }) {
         <p className="red">You and {friendobj.name} are even</p>
       )}
 
-      <button className="button">Select</button>
+      <Button>Select</Button>
     </li>
   );
 }
