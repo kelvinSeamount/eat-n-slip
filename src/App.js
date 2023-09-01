@@ -1,6 +1,7 @@
 import FriendsList from "./FriendsList";
 import Button from "./Button";
 import FormAddFriend from "./FormAddFriend";
+import FormSpiltBill from "./FormSpiltBill";
 const initialFriends = [
   {
     id: 118836,
@@ -30,6 +31,7 @@ export default function App() {
         <FormAddFriend />
         <Button>Add friend</Button>
       </div>
+      <FormSpiltBill />
     </div>
   );
 }
