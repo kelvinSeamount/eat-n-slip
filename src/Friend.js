@@ -16,9 +16,7 @@ export default function Friend({ friendobj }) {
           {friendobj.name} owes you {Math.abs(friendobj.balance)}$
         </p>
       )}
-      {friendobj.balance === 0 && (
-        <p className="red">You and {friendobj.name} are even</p>
-      )}
+      {friendobj.balance === 0 && <p>You and {friendobj.name} are even</p>}
 
       <Button>Select</Button>
     </li>
