@@ -25,27 +25,51 @@ const initialFriends = [
 ];
 
 export default function App() {
+  //UseState new friend form
   const [showFormAddFriend, setshowFormAddFriend] = useState(false);
+
+  //UseState to  add new friend
   const [friends, setFriends] = useState(initialFriends);
 
+  //UseState for the form bill
+  const [selectedFriend, setSelectedFriend] = useState(false);
+
+  //To display Show form friend
   function handleShowAddFriend() {
     setshowFormAddFriend((show) => !show);
   }
 
+  //To display New friend
   function handleAddFriend(friend) {
     setFriends((friends) => [...friends, friend]);
     setshowFormAddFriend(false);
   }
+
+  //To display the form bill
+  function handleSelection(friend) {
+    setSelectedFriend(friend);
+  }
+
   return (
     <div className="app">
       <div className="sidebar">
-        <FriendsList friends={friends} />
+        {/*Passing  the friends props*/}
+        <FriendsList
+          friends={friends}
+          onSelection={handleSelection}
+          selectedFriend={selectedFriend}
+        />
+
+        {/*Render the Showform friend*/}
         {showFormAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
+
+        {/*Updating state for Show form friend */}
         <Button onClick={handleShowAddFriend}>
           {showFormAddFriend ? "Close" : "Add friend"}
         </Button>
       </div>
-      <FormSpiltBill />
+
+      {selectedFriend && <FormSpiltBill selectedFriend={selectedFriend} />}
     </div>
   );
 }
