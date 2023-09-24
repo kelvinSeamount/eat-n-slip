@@ -52,6 +52,18 @@ export default function App() {
     setshowFormAddFriend(false);
   }
 
+  //IMPLEMENT SPLITBILL
+  function handleSplitBill(value) {
+    setFriends((friends) =>
+      friends.map((friend) =>
+        friend.id === selectedFriend.id
+          ? { ...friend, balance: friend.balance + value }
+          : friend
+      )
+    );
+    setSelectedFriend(null);
+  }
+
   return (
     <div className="app">
       <div className="sidebar">
@@ -71,7 +83,12 @@ export default function App() {
         </Button>
       </div>
 
-      {selectedFriend && <FormSpiltBill selectedFriend={selectedFriend} />}
+      {selectedFriend && (
+        <FormSpiltBill
+          selectedFriend={selectedFriend}
+          onSplitBill={handleSplitBill}
+        />
+      )}
     </div>
   );
 }
