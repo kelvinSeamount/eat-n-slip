@@ -1,7 +1,7 @@
 import Button from "./Button";
 
 export default function Friend({ friendobj, onSelection, selectedFriend }) {
-  const isSelected = selectedFriend.id === friendobj.id;
+  const isSelected = selectedFriend?.id === friendobj.id;
   return (
     <li className={isSelected ? "selected" : ""}>
       <img src={friendobj.image} alt={friendobj.name} />

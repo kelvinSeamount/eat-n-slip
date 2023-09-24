@@ -47,7 +47,9 @@ export default function App() {
 
   //To display the form bill
   function handleSelection(friend) {
-    setSelectedFriend(friend);
+    //setSelectedFriend(friend);
+    setSelectedFriend((cur) => (cur?.id === friend.id ? null : friend));
+    setshowFormAddFriend(false);
   }
 
   return (
