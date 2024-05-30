@@ -4,7 +4,7 @@ import Button from "./Button";
 export default function FormAddFriend({ onAddFriend }) {
   //USE OF CONTROLLED ELEMENTS
   const [name, setName] = useState("");
-  const [image, setImage] = useState("https://i.pravatar.cc/48");
+  const [image, setImage] = useState("https://i.pravatar.cc/48?u=499476");
 
   //LISTEN FOR ONSUBMIT EVENT
   function handleSubmit(e) {
@@ -21,7 +21,7 @@ export default function FormAddFriend({ onAddFriend }) {
     onAddFriend(newFriend);
 
     setName("");
-    setImage("https://i.pravatar.cc/48");
+    setImage("https://i.pravatar.cc/48?u=499476");
   }
 
   return (
