@@ -17,12 +17,13 @@ export default function FormAddFriend({ onAddFriend }) {
     const newFriend = {
       id,
       name,
-      image: `${image} ?={id}`,
+      image: `${image} ?=${id}`,
+      balance: 0,
     };
     onAddFriend(newFriend);
 
     setName("");
-    setImage("https://i.pravatar.cc/48?u=499476");
+    setImage("https://i.pravatar.cc/48");
   }
 
   return (
