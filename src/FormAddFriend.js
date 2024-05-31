@@ -12,6 +12,7 @@ export default function FormAddFriend({ onAddFriend }) {
 
     if (!name || !image) return;
 
+    //Generate random id
     const id = crypto.randomUUID();
     const newFriend = {
       id,
